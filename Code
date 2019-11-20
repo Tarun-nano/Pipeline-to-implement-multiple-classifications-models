@@ -8,13 +8,13 @@ def classpipe(pipeline, scaled_xtrain, ytrain, scaled_xtest, ytest, verbose=True
     
     if verbose:
         print("----------------------------------------------------------------------------------")
-        print(f"Classifier algorithm: {pipeline.named_steps['regressor'].__class__.__name__}")
+        print(f"Classifier algorithm: {pipeline.named_steps['classifiers'].__class__.__name__}")
         print()
         print(f"Accuracy Score : {acc}")
         print(f"CohenKappa Score : {cohen_score}")
         print()
     
-    return pipeline.named_steps['regressor'], acc, cohen_score
+    return pipeline.named_steps['classifiers'], acc, cohen_score
     
 classifiers = [
     LogisticRegression(),
